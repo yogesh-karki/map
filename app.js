@@ -88,7 +88,7 @@ map.on("load", function () {
                 <div class="info-card">
                     <div class="info-card-header">
                         <h4>${name}</h4>
-                        <h6>${subType}</h6>
+                        <h6>${type}</h6>
                         
                     </div>
             
