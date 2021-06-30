@@ -5,11 +5,13 @@ fetch("./provinces.json")
     provinces.forEach((item) => {
         $("#provinces").append(`<option value="${item.id}">${item.title}</option>`)
     });
+    $('select').niceSelect();
 });
 
 $('#provinces').on('change',function(){
     var provinceID = $(this).val();
     $('#districts').html("");
+    $('#districts').siblings(['.nice-select']).remove()
     fetch("./districts.json")
     .then(response => response.json())
     .then(function(json){
@@ -20,6 +22,7 @@ $('#provinces').on('change',function(){
         districts.forEach((item) => {
             $("#districts").append(`<option value="${item.id}">${item.title}</option>`)
         });
+        $('select').niceSelect();
     });
 });
 
