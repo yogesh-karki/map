@@ -1,9 +1,9 @@
 mapboxgl.accessToken = "pk.eyJ1IjoieW9nZXNoa2Fya2kiLCJhIjoiY2txZXphNHNlMGNybDJ1cXVmeXFiZzB1eSJ9.A7dJUR4ppKJDKWZypF_0lA";
 var map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/light-v10",
-    center: [84.6897, 28.4764],
-    zoom: 7,
+    style: "mapbox://styles/yogeshkarki/ckqhmewto4m2317p8n8qarotc",
+    center: [83.2897, 28.4764],
+    zoom: 6.8,
     setMaxBounds: [86.6897, 29.4764],
 });
 
@@ -87,13 +87,89 @@ map.on("load", function () {
                 `
                 <div class="info-card">
                     <div class="info-card-header">
+
                         <h4>${name}</h4>
-                        <h6>${type}</h6>
+                       
                         
                     </div>
             
                     <div class="info-desc">
+                        <div class="info-desc-wrapper">
+                            <div class="data">
+                                <div class="title">Instituation Type</div>
+                                <div class="text">${subType}</div>
+                            </div>
+                        </div>
+
+                        <div class="info-desc-wrapper">
+                            <div class="data">
+                                <div class="title">Province</div>
+                                <div class="text">Bagmati</div>
                         
+                            </div>
+                        </div>
+
+                        <div class="info-desc-wrapper">
+                            <div class="data">
+                                <div class="title">Contact Person</div>
+                                <div class="text">Contact Person</div>
+                        
+                            </div>
+                        </div>
+
+                        <div class="info-desc-wrapper">
+                            <div class="data">
+                                <div class="title">District</div>
+                                <div class="text">Kathmandu</div>
+
+                            </div>
+                        </div>
+                        
+                        <div class="info-desc-wrapper">
+                            <div class="data">   
+                                <div class="title">Contact Number</div>
+                                <div class="text">9852025874</div>
+                            </div>
+                        </div>
+
+
+                        <div class="info-desc-wrapper">
+                            <div class="data">
+                                <div class="title">Municipality</div>
+                                <div class="text">Kathmandu</div>
+                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="items">
+                        <h5>Responded with</h5>
+
+                        <div class="item-wrapper">
+                            <div class="info-desc-wrapper">
+                                <div class="data">
+                                    <div class="title">Oxygen Cylinders 10 L</div>
+                                    <div class="text">15</div>
+                            
+                                </div>
+                            </div>
+
+                            <div class="info-desc-wrapper">
+                                <div class="data">
+                                    <div class="title">Oxygen Regulator 10 L</div>
+                                    <div class="text">3</div>
+                            
+                                </div>
+                            </div>
+
+                            <div class="info-desc-wrapper">
+                                <div class="data">
+                                    <div class="title">Oxygen Concentrator</div>
+                                    <div class="text">1</div>
+                            
+                                </div>
+                            </div>
+                        </div>
                     </div>
             
                 </div>
