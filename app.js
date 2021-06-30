@@ -1,29 +1,21 @@
-fetch("./provinces.json")
-.then(response => response.json())
-.then(function(json){
-    provinces = json.provinces;
-    provinces.forEach((item) => {
-        $("#provinces").append(`<option value="${item.id}">${item.title}</option>`)
-    });
-    $('select').niceSelect();
+import {districts,provinces} from './resources.js';
+
+provinces.forEach((item) => {
+    $("#provinces").append(`<option value="${item.id}">${item.title}</option>`)
 });
 
 $('#provinces').on('change',function(){
     var provinceID = $(this).val();
     $('#districts').html("");
-    $('#districts').siblings(['.nice-select']).remove()
-    fetch("./districts.json")
-    .then(response => response.json())
-    .then(function(json){
-        districts = json.districts.filter((item)=>{
-            return item.province==provinceID;
-        });
-        $("#districts").append(`<option value="-1" selected disabled>Select</option>`)
-        districts.forEach((item) => {
-            $("#districts").append(`<option value="${item.id}">${item.title}</option>`)
-        });
-        $('select').niceSelect();
+    $('#districts').siblings('.nice-select').remove()
+    var items = districts.filter((item)=>{
+        return item.province==provinceID;
     });
+    $("#districts").append(`<option value="-1" selected disabled>Select</option>`)
+    items.forEach((item) => {
+        $("#districts").append(`<option value="${item.id}">${item.title}</option>`)
+    });
+    $('select').niceSelect();
 });
 
 $('.update').on('click',(e) => {
@@ -31,8 +23,7 @@ $('.update').on('click',(e) => {
     var selectedProvince = $('#provinces').val();
 });
 
-
-
+$('select').niceSelect();
 
 mapboxgl.accessToken = "pk.eyJ1IjoieW9nZXNoa2Fya2kiLCJhIjoiY2txZXphNHNlMGNybDJ1cXVmeXFiZzB1eSJ9.A7dJUR4ppKJDKWZypF_0lA";
 
