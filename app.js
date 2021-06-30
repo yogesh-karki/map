@@ -17,7 +17,6 @@ $('#provinces').on('change',function(){
             return item.province==provinceID;
         });
         $("#districts").append(`<option value="-1" selected disabled>Select</option>`)
-
         districts.forEach((item) => {
             $("#districts").append(`<option value="${item.id}">${item.title}</option>`)
         });
