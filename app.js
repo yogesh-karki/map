@@ -1,4 +1,40 @@
+fetch("./provinces.json")
+.then(response => response.json())
+.then(function(json){
+    provinces = json.provinces;
+    provinces.forEach((item) => {
+        $("#provinces").append(`<option value="${item.id}">${item.title}</option>`)
+    });
+});
+
+$('#provinces').on('change',function(){
+    var provinceID = $(this).val();
+    $('#districts').html("");
+    fetch("./districts.json")
+    .then(response => response.json())
+    .then(function(json){
+        districts = json.districts.filter((item)=>{
+            return item.province==provinceID;
+        });
+        $("#districts").append(`<option value="-1" selected disabled>Select</option>`)
+
+        districts.forEach((item) => {
+            $("#districts").append(`<option value="${item.id}">${item.title}</option>`)
+        });
+    });
+});
+
+$('.update').on('click',(e) => {
+    e.preventDefault();
+    var selectedProvince = $('#provinces').val();
+});
+
+
+
+
 mapboxgl.accessToken = "pk.eyJ1IjoieW9nZXNoa2Fya2kiLCJhIjoiY2txZXphNHNlMGNybDJ1cXVmeXFiZzB1eSJ9.A7dJUR4ppKJDKWZypF_0lA";
+
+
 var map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/yogeshkarki/ckqhmewto4m2317p8n8qarotc",
