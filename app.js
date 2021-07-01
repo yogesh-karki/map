@@ -1,6 +1,33 @@
+import {districts,provinces} from './resources.js';
 
+provinces.forEach((item) => {
+    $("#provinces").append(`<option value="${item.id}">${item.title}</option>`)
+});
+
+$('#provinces').on('change',function(){
+    var provinceID = $(this).val();
+    $('#districts').html("");
+    $('#districts').siblings('.nice-select').remove()
+    var items = districts.filter((item)=>{
+        return item.province==provinceID;
+    });
+    $("#districts").append(`<option value="-1" selected disabled>Select</option>`)
+    items.forEach((item) => {
+        $("#districts").append(`<option value="${item.id}">${item.title}</option>`)
+    });
+    $('select').niceSelect();
+});
+
+$('.update').on('click',(e) => {
+    e.preventDefault();
+    var selectedProvince = $('#provinces').val();
+});
+
+$('select').niceSelect();
 
 mapboxgl.accessToken = "pk.eyJ1IjoieW9nZXNoa2Fya2kiLCJhIjoiY2txZXphNHNlMGNybDJ1cXVmeXFiZzB1eSJ9.A7dJUR4ppKJDKWZypF_0lA";
+
+
 var map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/yogeshkarki/ckqhmewto4m2317p8n8qarotc",
@@ -89,7 +116,6 @@ map.on("load", function () {
                 `
                 <div class="info-card">
                     <div class="info-card-header">
-
                         <h4>${name}</h4>
                        
                         
@@ -102,7 +128,6 @@ map.on("load", function () {
                                 <div class="text">${subType}</div>
                             </div>
                         </div>
-
                         <div class="info-desc-wrapper">
                             <div class="data">
                                 <div class="title">Province</div>
@@ -110,7 +135,6 @@ map.on("load", function () {
                         
                             </div>
                         </div>
-
                         <div class="info-desc-wrapper">
                             <div class="data">
                                 <div class="title">Contact Person</div>
@@ -118,12 +142,10 @@ map.on("load", function () {
                         
                             </div>
                         </div>
-
                         <div class="info-desc-wrapper">
                             <div class="data">
                                 <div class="title">District</div>
                                 <div class="text">Kathmandu</div>
-
                             </div>
                         </div>
                         
@@ -133,8 +155,6 @@ map.on("load", function () {
                                 <div class="text">9852025874</div>
                             </div>
                         </div>
-
-
                         <div class="info-desc-wrapper">
                             <div class="data">
                                 <div class="title">Municipality</div>
@@ -143,10 +163,8 @@ map.on("load", function () {
                             </div>
                         </div>
                     </div>
-
                     <div class="items">
                         <h5>Responded with</h5>
-
                         <div class="item-wrapper">
                             <div class="info-desc-wrapper">
                                 <div class="data">
@@ -155,7 +173,6 @@ map.on("load", function () {
                             
                                 </div>
                             </div>
-
                             <div class="info-desc-wrapper">
                                 <div class="data">
                                     <div class="title">Oxygen Regulator 10 L</div>
@@ -163,7 +180,6 @@ map.on("load", function () {
                             
                                 </div>
                             </div>
-
                             <div class="info-desc-wrapper">
                                 <div class="data">
                                     <div class="title">Oxygen Concentrator</div>
