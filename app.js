@@ -1,5 +1,7 @@
 import {districts,provinces} from './resources.js';
 
+import {provinceData} from './json/provinces-data.js';
+
 provinces.forEach((item) => {
     $("#provinces").append(`<option value="${item.id}">${item.title}</option>`)
 });
@@ -108,6 +110,8 @@ map.on("load", function () {
         var name = e.features[0].properties.name;
         var subType = e.features[0].properties.subtype;
         var address = e.features[0].properties.address;
+        var province = e.features[0].properties.province;
+        var district = e.features[0].properties.districts;
         
         
         new mapboxgl.Popup()
@@ -131,7 +135,7 @@ map.on("load", function () {
                         <div class="info-desc-wrapper">
                             <div class="data">
                                 <div class="title">Province</div>
-                                <div class="text">Bagmati</div>
+                                <div class="text">${province}</div>
                         
                             </div>
                         </div>
@@ -145,7 +149,7 @@ map.on("load", function () {
                         <div class="info-desc-wrapper">
                             <div class="data">
                                 <div class="title">District</div>
-                                <div class="text">Kathmandu</div>
+                                <div class="text">${district}</div>
                             </div>
                         </div>
                         
@@ -200,10 +204,5 @@ map.on("load", function () {
      
     });
 
-    map.on("mouseenter", "clusters", function () {
-        map.getCanvas().style.cursor = "pointer";
-    });
-    map.on("mouseleave", "clusters", function () {
-        map.getCanvas().style.cursor = "";
-    });
+
 });

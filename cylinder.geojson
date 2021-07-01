@@ -10,6 +10,8 @@
                 "type": "Institutions",
                 "subtype":"Community Hospital",
                 "name": "Janasewa Community Hospital",
+                "province": "Province 1",
+                "districts": "Khotang",
                 "address": "Diktel Rupakot Majhuwagadi Municipality",
                 "items": [
                     {
@@ -30,6 +32,8 @@
                 "type": "Institutions",
                 "subtype":"NGO",
                 "name": "Collective Concern Society",
+                "province": "Bagmati",
+                "districts": "Sindhuli",
                 "address": "Fikkal Gaupalika",
                 "items": [
                     {
@@ -54,7 +58,9 @@
                 "type": "Institutions",
                 "subtype":"NGO",
                 "name": "Bighna Harta Nepal",
-                "address": "Kankasundhari Gaupalika",
+                "province": "Karnali",
+                "districts": "Jumla",
+                "address": "Kankasundhari ",
                 "items": [
                     {
                         "Oxygen Cylinders 47 L": "4"
@@ -76,6 +82,8 @@
                 "type": "Institutions",
                 "subtype":"Local Municipality",
                 "name": "Khadadevi Rural Municipality",
+                "province": "Bagmati",
+                "districts": "Ramechhap",
                 "address": "Khadadevi Rural Municipality",
                 "items": [
                     {
@@ -99,6 +107,8 @@
                 "type": "Institutions",
                 "subtype":"Health Posts",
                 "name": "Makalu Health Post and Num Health Post ",
+                "province": "Province 1",
+                "districts": "Makalu",
                 "address": "Makalu",
                 "items": [
                     {
@@ -122,6 +132,8 @@
                 "type": "Institutions",
                 "subtype":"Local Municipality",
                 "name": "Ajirkot",
+                "province": "Gandaki",
+                "districts": "Gorkha",
                 "address": "Gorkha",
                 "items": [
                     {
@@ -145,6 +157,8 @@
                 "type": "Individual",
                 "name": "Som Bahadur Tamang ",
                 "age": "45",
+                "province": "Bagmati",
+                "districts": "Kathmandu",
                 "address": "Gokarneshowr Municipality",
                 "items": [
                     {
