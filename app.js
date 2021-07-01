@@ -1,7 +1,5 @@
 import {districts,provinces} from './resources.js';
 
-import {provinceData} from './json/provinces-data.js';
-
 provinces.forEach((item) => {
     $("#provinces").append(`<option value="${item.id}">${item.title}</option>`)
 });
@@ -23,6 +21,10 @@ $('#provinces').on('change',function(){
 $('.update').on('click',(e) => {
     e.preventDefault();
     var selectedProvince = $('#provinces').val();
+    var selectedDistrict = $('#districts').val();
+    console.log(selectedProvince, selectedDistrict)
+
+
 });
 
 $('select').niceSelect();
